@@ -19,8 +19,6 @@ You can verify this by opening a command prompt and runing `pip --version`.
 ### If you have pip, you must now install selenium and pytest
 Selenium: `pip install selenium`  
 Pytest: `pip install pytest`
-
-### After this, run `npm install` to get all relevant dependencies.  
   
 ### Lastly,  
 assuming you will be using Chrome, you must download the chrome driver for your browsers current version.  
