@@ -2,11 +2,11 @@
 
 ## Dont know where to start with automation? Why not start here!
 
-QATool is a simple low maintenance solution to beginning automation of basic tasks.  
+QATool is a simple low maintenance solution to begin automating basic tasks.  
 Whether you are a developer, QA, Project Manager... This serves as a simple template to build upon to easily run automation scripts with Python + Selenium.  
 
 While you still have to write the scripts yourself, this project allows you to already have a simple file structure setup alongside an easily 
-customizable GUI to call your scripts from within an application.  
+customizable GUI (with tkinter) to call your scripts from within an application.  
 
 ## Prerequisites
 ### Python 3 - https://www.python.org/downloads/
