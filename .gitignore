@@ -4,3 +4,4 @@ tests/__pycache__
 .pytest_cache
 build
 chromedriver.exe
+main.spec
