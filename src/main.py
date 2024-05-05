@@ -12,7 +12,7 @@ class App(customtkinter.CTk):
         super().__init__()
         
         # configure window
-        self.title("QATool - Echelon")
+        self.title("QATool")
         self.geometry(f"{1100}x{580}")
         
         # root!
