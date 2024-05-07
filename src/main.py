@@ -48,10 +48,12 @@ class App(customtkinter.CTk):
         self.bt_dashboard = customtkinter.CTkButton(self.sidebar_frame, text="Dashboard", command=self.dash)
         self.bt_dashboard.grid(row=1, column=0, padx=20, pady=10)
 
+        self.bt_subscriptions = customtkinter.CTkButton(self.sidebar_frame, text="Example", command=self.example)
+        self.bt_subscriptions.grid(row=2, column=0, padx=20, pady=10)
+
         # right side panel, has self.right_dashboard inside it
         self.right_side_panel = customtkinter.CTkFrame(self.main_container, corner_radius=10, fg_color="#000811")
         self.right_side_panel.pack(side=tkinter.LEFT, fill=tkinter.BOTH, expand=True, padx=5, pady=5)
-        
         
         self.right_dashboard = customtkinter.CTkFrame(self.main_container, corner_radius=10, fg_color="#000811")
         self.right_dashboard.pack(in_=self.right_side_panel, side=tkinter.TOP, fill=tkinter.BOTH, expand=True, padx=0, pady=0)
@@ -59,8 +61,8 @@ class App(customtkinter.CTk):
         self.dash() # Initialize to dashboard view
 
     def dash(self):
-        
         self.clear_frame()
+
         self.logo_label = customtkinter.CTkLabel(self.right_dashboard, text="Dashboard", font=customtkinter.CTkFont(size=20, weight="bold"))
         self.logo_label.grid(row=1, column=0, padx=(20, 0), pady=(20, 0), sticky="nsew")
         self.textbox = customtkinter.CTkTextbox(self.right_dashboard, width=800)
@@ -68,6 +70,23 @@ class App(customtkinter.CTk):
         self.textbox.insert("0.0", "Dashboard:\n\n" + 
                             "Select a page from the sidebar to the left to see available scripts.\n\n" + 
                             "QA Tool is currently in a development state.")
+        
+    def example(self):
+        self.clear_frame()
+
+        # Example
+        self.monthly_label = customtkinter.CTkLabel(self.right_dashboard, text="Example Button", font=customtkinter.CTkFont(size=20, weight="bold"))
+        self.monthly_label.grid(row=1, column=1, padx=(20, 0), pady=(10, 0), sticky="nsew")
+
+        self.bt_monthly = customtkinter.CTkButton(self.right_dashboard, text="Example", command=lambda: actions.ExampleActions.fillbox(a))
+        self.bt_monthly.grid(row=2, column=1, padx=(20, 0), pady=(20, 0))
+
+        self.textbox_ex = customtkinter.CTkTextbox(self.right_dashboard, width=800, height=150)
+        self.textbox_ex.grid(row=3, columnspan=3, padx=(20, 0), pady=(20, 0), sticky="nsew")
+        self.textbox_ex.insert("0.0", "This is an example textbox, you can display help text here." +
+                               "\n\nAlternatively, you can also have this text display relevant info to a user after they execute a script." +
+                               "\n\nClick the button above to change the textbox below."
+                               )
 
     def change_scaling_event(self, new_scaling: str):
         new_scaling_float = int(new_scaling.replace("%", "")) / 100
